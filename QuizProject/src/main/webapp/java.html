@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Java Quiz</title>
+    <style>
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+header {
+	background-color: #1e88e5; /* Blue background for header */
+	color: #fff;
+	padding: 20px;
+}
+
+.quiz-container {
+	width: 60%;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.question {
+	margin-bottom: 30px;
+	padding: 20px;
+	/*border: 2px solid #1e88e5; /* Blue border for questions */
+	border-radius: 10px;
+	/*background-color: #e3f2fd; /* Light blue background for questions */
+	transition: all 0.3s ease;
+}
+
+.question h3 {
+	background-color: #f0f0f0; /* Gray background for code snippets */
+	color: #333; /* Text color for code snippets */
+	padding: 10px; /* Padding for code snippets */
+	border-radius: 5px; /* Rounded corners for code snippets */
+	font-family: monospace; /* Monospace font for code snippets */
+	text-align: left; /* Align code snippets to the left */
+	margin: 10px 0; /* Margin for code snippets */
+	white-space: pre-wrap; /* Preserve white space in code snippets */
+}
+
+.options {
+	list-style-type: none;
+	padding: 0;
+	text-align: left; /* Align options to the left */
+}
+
+.option {
+	margin: 5px;
+	padding: 10px 20px;
+	background-color: #fff; /* White background for options */
+	border: 1px solid #1e88e5; /* Blue border for options */
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.option:hover {
+	background-color: #f0f0f0; /* Light gray on hover */
+}
+
+input[type="submit"] {
+	margin-top: 20px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #1e88e5; /* Blue submit button */
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #1565c0; /* Darker blue on hover */
+}
+
+#score {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #1e88e5; /* Blue background color */
+	color: white; /* Text color */
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Java Quiz</h1>
+    </header>
+    <div class="quiz-container">
+        <form action="javaScore.jsp" method="post">
+            <div class="question">
+                <h2>Question 1: What is the size of the primitive type 'int' in Java?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q1" value="8 bits"> 8 bits</li>
+                    <li class="option"><input type="radio" name="q1" value="16 bits"> 16 bits</li>
+                    <li class="option"><input type="radio" name="q1" value="32 bits"> 32 bits</li>
+                    <li class="option"><input type="radio" name="q1" value="64 bits"> 64 bits</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 2: What is the output of the following Java code snippet?
+                <h3>
+                public class Test {<br>
+                public static void main(String[] args) {<br>
+                int x = 5;<br>
+                int y = 2;<br>
+                System.out.println(x / y);<br>
+              }<br>
+             }<br>
+                </h3>
+                
+                </h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q2" value="2"> 2</li>
+                    <li class="option"><input type="radio" name="q2" value="2.5"> 2.5</li>
+                    <li class="option"><input type="radio" name="q2" value="2.0"> 2.0</li>
+                    <li class="option"><input type="radio" name="q2" value="Compilation error">Compilation error</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 3: Which of the following is NOT a valid identifier in Java?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q3" value="$var"> $var</li>
+                    <li class="option"><input type="radio" name="q3" value="_variable"> _variable</li>
+                    <li class="option"><input type="radio" name="q3" value="1value"> 1value</li>
+                    <li class="option"><input type="radio" name="q3" value="varName"> varName</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 4: What is the correct way to declare an array in Java?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q4" value="int[] arr = new int[5];"> int[] arr = new int[5];</li>
+                    <li class="option"><input type="radio" name="q4" value="int arr[] = new int[5];"> int arr[] = new int[5];</li>
+                    <li class="option"><input type="radio" name="q4" value="int arr[5];"> int arr[5];</li>
+                    <li class="option"><input type="radio" name="q4" value="Array arr = new Array(5);"> Array arr = new Array(5);</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 5: What will the following code print?
+                <h3>
+                 System.out.println("Hello" + 5 + 3);
+                </h3>
+                </h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q5" value="Hello53"> Hello53</li>
+                    <li class="option"><input type="radio" name="q5" value="Hello8"> Hello8</li>
+                    <li class="option"><input type="radio" name="q5" value="Compilation Error"> Compilation Error</li>
+                    <li class="option"><input type="radio" name="q5" value="Hello"> Hello</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 6: Which of the following is not a primitive data type in Java?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q6" value="int">int</li>
+                    <li class="option"><input type="radio" name="q6" value="float"> float</li>
+                    <li class="option"><input type="radio" name="q6" value="String"> String</li>
+                    <li class="option"><input type="radio" name="q6" value="boolean"> boolean</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 7: Which OOP concept is used to describe the ability of a new class to be created from an existing class?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q7" value="Inheritance"> Inheritance</li>
+                    <li class="option"><input type="radio" name="q7" value="Encapsulation"> Encapsulation</li>
+                    <li class="option"><input type="radio" name="q7" value="Polymorphism"> Polymorphism</li>
+                    <li class="option"><input type="radio" name="q7" value="Abstraction"> Abstraction</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 8: What does the term "encapsulation" in Java refer to?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q8" value=" Hiding implementation details and showing only essential features of an object">  Hiding implementation details and showing only essential features of an object</li>
+                    <li class="option"><input type="radio" name="q8" value="Wrapping a primitive data type into an object"> Wrapping a primitive data type into an object</li>
+                    <li class="option"><input type="radio" name="q8" value="Creating a copy of an object with the same state"> Creating a copy of an object with the same state</li>
+                    <li class="option"><input type="radio" name="q8" value="Converting an object of one class into an object of another class"> Converting an object of one class into an object of another class</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 9:What is the process by which one class acquires the properties (data members) and functionalities (methods) of another class?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q9" value="Encapsulation"> Encapsulation</li>
+                    <li class="option"><input type="radio" name="q9" value="Polymorphism"> Polymorphism</li>
+                    <li class="option"><input type="radio" name="q9" value="Abstraction"> Abstraction</li>
+                    <li class="option"><input type="radio" name="q9" value="Inheritance"> Inheritance</li>
+                </ul>
+            </div>
+            <div class="question">
+                <h2>Question 10: Which keyword is used to define a constant in Java?</h2>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="q10" value="final"> final</li>
+                    <li class="option"><input type="radio" name="q10" value="const"> const</li>
+                    <li class="option"><input type="radio" name="q10" value="static"> static</li>
+                    <li class="option"><input type="radio" name="q10" value="constant"> constant</li>
+                </ul>
+            </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

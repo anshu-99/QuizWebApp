@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Quiz</title>
+    <style>
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+header {
+	background-color: #4ca2af; /* Green background for header */
+	color: #fff;
+	padding: 20px;
+}
+
+.quiz-container {
+	width: 60%;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+}
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.question {
+	margin-bottom: 30px;
+	padding: 20px;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+}
+
+.question h2 {
+	background-color: #f0f0f0; /* Gray background for question title */
+	color: #333; /* Text color for question title */
+	padding: 10px; /* Padding for question title */
+	border-radius: 5px; /* Rounded corners for question title */
+	font-family: Arial, sans-serif; /* Font for question title */
+	text-align: left; /* Align question title to the left */
+	margin: 10px 0; /* Margin for question title */
+}
+
+.question h3 {
+	background-color: #f0f0f0; /* Gray background for code snippets */
+	color: #333; /* Text color for code snippets */
+	padding: 10px; /* Padding for code snippets */
+	border-radius: 5px; /* Rounded corners for code snippets */
+	font-family: monospace; /* Monospace font for code snippets */
+	text-align: left; /* Align code snippets to the left */
+	margin: 10px 0; /* Margin for code snippets */
+	white-space: pre-wrap; /* Preserve white space in code snippets */
+}
+
+.options {
+	list-style-type: none;
+	padding: 0;
+	text-align: left; /* Align options to the left */
+}
+
+.option {
+	margin: 5px;
+	padding: 10px 20px;
+	background-color: #fff; /* White background for options */
+	border: 1px solid #4ca2af; /* Green border for options */
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.option:hover {
+	background-color: #f0f0f0; /* Light gray on hover */
+}
+
+input[type="submit"] {
+	margin-top: 20px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #4ca2af; /* Green submit button */
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049; /* Darker green on hover */
+}
+
+#score {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #4CAF50; /* Green background color */
+	color: white; /* Text color */
+	font-size: 18px;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Welcome to SQL Quiz</h1>
+</header>
+<div class="quiz-container">
+    <form action="sqlScore.jsp" method="post">
+        <div class="question">
+            <h2>Question 1: What does SQL stand for?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q1" value="Structured Query Language"> Structured Query Language</li>
+                <li class="option"><input type="radio" name="q1" value="Sequential Query Language"> Sequential Query Language</li>
+                <li class="option"><input type="radio" name="q1" value="Simple Query Language"> Simple Query Language</li>
+                <li class="option"><input type="radio" name="q1" value="Standard Query Language"> Standard Query Language</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 2: Which keyword is used to retrieve data from a SQL database?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q2" value="FETCH"> FETCH</li>
+                <li class="option"><input type="radio" name="q2" value="SELECT"> SELECT</li>
+                <li class="option"><input type="radio" name="q2" value="RETRIEVE"> RETRIEVE</li>
+                <li class="option"><input type="radio" name="q2" value="PULL"> PULL</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 3: What is the result of executing the following SQL query?
+            </h2>
+            <h3>SELECT COUNT(*) FROM Employees;</h3>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q3" value="Number of employees in the Employees table"> Number of employees in the Employees table</li>
+                <li class="option"><input type="radio" name="q3" value="Names of all employees"> Names of all employees</li>
+                <li class="option"><input type="radio" name="q3" value="Sum of salaries of all employees"> Sum of salaries of all employees</li>
+                <li class="option"><input type="radio" name="q3" value="Average age of all employees"> Average age of all employees</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 4: Which SQL command is used to delete data from a database?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q4" value="DELETE"> DELETE</li>
+                <li class="option"><input type="radio" name="q4" value="REMOVE"> REMOVE</li>
+                <li class="option"><input type="radio" name="q4" value="DROP"> DROP</li>
+                <li class="option"><input type="radio" name="q4" value="ERASE"> ERASE</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 5: Which SQL clause is used to specify conditions?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q5" value="ORDER BY"> ORDER BY</li>
+                <li class="option"><input type="radio" name="q5" value="GROUP BY"> GROUP BY</li>
+                <li class="option"><input type="radio" name="q5" value="WHERE"> WHERE</li>
+                <li class="option"><input type="radio" name="q5" value="HAVING"> HAVING</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 6: What will be the output of the following SQL query?
+            </h2>
+            <h3>SELECT 5 * 3;</h3>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q6" value="5"> 5</li>
+                <li class="option"><input type="radio" name="q6" value="3"> 3</li>
+                <li class="option"><input type="radio" name="q6" value="15"> 15</li>
+                <li class="option"><input type="radio" name="q6" value="Error"> Error</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 7: What does the SQL function UPPER() do?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q7" value="Converts a string to uppercase"> Converts a string to uppercase</li>
+                <li class="option"><input type="radio" name="q7" value="Converts a string to lowercase"> Converts a string to lowercase</li>
+                <li class="option"><input type="radio" name="q7" value="Counts the number of characters in a string"> Counts the number of characters in a string</li>
+                <li class="option"><input type="radio" name="q7" value="Reverses a string"> Reverses a string</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 8: What is the output of the following SQL query?
+            </h2>
+            <h3>SELECT SUBSTRING('Hello World', 7, 5);</h3>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q8" value="World"> World</li>
+                <li class="option"><input type="radio" name="q8" value="Hello"> Hello</li>
+                <li class="option"><input type="radio" name="q8" value="llo W"> llo W</li>
+                <li class="option"><input type="radio" name="q8" value="Error"> Error</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 9: Which SQL keyword is used to sort the result set in ascending order?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q9" value="SORT"> SORT</li>
+                <li class="option"><input type="radio" name="q9" value="ASC"> ASC</li>
+                <li class="option"><input type="radio" name="q9" value="ORDER"> ORDER</li>
+                <li class="option"><input type="radio" name="q9" value="SORTBY"> SORTBY</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 10: What will be the output of the following SQL query?
+            </h2>
+            <h3>SELECT COUNT(*) FROM Orders;</h3>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q10" value="Total number of orders"> Total number of orders</li>
+                <li class="option"><input type="radio" name="q10" value="Number of distinct customers"> Number of distinct customers</li>
+                <li class="option"><input type="radio" name="q10" value="Number of orders placed today"> Number of orders placed today</li>
+                <li class="option"><input type="radio" name="q10" value="Error"> Error</li>
+            </ul>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

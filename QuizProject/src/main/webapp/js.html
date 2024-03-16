@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #32aa56; /* Orange background for header */
+            color: #fff;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            width: 60%;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .question h3 {
+            background-color: #f0f0f0; /* Gray background for code snippets */
+            color: #333; /* Text color for code snippets */
+            padding: 10px; /* Padding for code snippets */
+            border-radius: 5px; /* Rounded corners for code snippets */
+            font-family: monospace; /* Monospace font for code snippets */
+            text-align: left; /* Align code snippets to the left */
+            margin: 10px 0; /* Margin for code snippets */
+            white-space: pre-wrap; /* Preserve white space in code snippets */
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            text-align: left; /* Align options to the left */
+        }
+
+        .option {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #fff; /* White background for options */
+            border: 1px solid #32aa56; /* Orange border for options */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #f0f0f0; /* Light gray on hover */
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #32aa56; /* Orange submit button */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f57c00; /* Darker orange on hover */
+        }
+
+        #score {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ff9800; /* Orange background color */
+            color: white; /* Text color */
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to JavaScript Quiz</h1>
+</header>
+<div class="quiz-container">
+    <form action="javascriptScore.jsp" method="post">
+        <div class="question">
+            <h2>Question 1: What will the following code print?
+            <h3>
+                console.log(5 + "5");
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q1" value="10"> 10</li>
+                <li class="option"><input type="radio" name="q1" value="55"> 55</li>
+                <li class="option"><input type="radio" name="q1" value="5 + 5"> 5 + 5</li>
+                <li class="option"><input type="radio" name="q1" value="Error"> Error</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 2: What is the output of the following JavaScript code?
+            <h3>
+                var x = 10;
+                var y = x++;
+                console.log(y);
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q2" value="9"> 9</li>
+                <li class="option"><input type="radio" name="q2" value="10"> 10</li>
+                <li class="option"><input type="radio" name="q2" value="11"> 11</li>
+                <li class="option"><input type="radio" name="q2" value="Error"> Error</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 3: What will be logged to the console?
+            <h3>
+                function foo() {
+                    var x = 5;
+                }
+                console.log(x);
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q3" value="5"> 5</li>
+                <li class="option"><input type="radio" name="q3" value="undefined"> undefined</li>
+                <li class="option"><input type="radio" name="q3" value="ReferenceError"> ReferenceError</li>
+                <li class="option"><input type="radio" name="q3" value="null"> null</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 4: What does the following expression evaluate to?
+            <h3>
+                "foo" == "bar" || 10 > 5
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q4" value="true"> true</li>
+                <li class="option"><input type="radio" name="q4" value="false"> false</li>
+                <li class="option"><input type="radio" name="q4" value="Error"> Error</li>
+                <li class="option"><input type="radio" name="q4" value="null"> null</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 5: What is the output of the following code snippet?
+            <h3>
+                var x = 5;
+                function foo() {
+                    console.log(x);
+                    var x = 10;
+                }
+                foo();
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q5" value="5"> 5</li>
+                <li class="option"><input type="radio" name="q5" value="10"> 10</li>
+                <li class="option"><input type="radio" name="q5" value="undefined"> undefined</li>
+                <li class="option"><input type="radio" name="q5" value="Error"> Error</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 6: What is the output of the following code?
+            <h3>
+                var num = 8;
+                var result = num.toString(2);
+                console.log(result);
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q6" value="1000"> 1000</li>
+                <li class="option"><input type="radio" name="q6" value="10"> 10</li>
+                <li class="option"><input type="radio" name="q6" value="1001"> 1001</li>
+                <li class="option"><input type="radio" name="q6" value="undefined"> undefined</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 7: Which method is used to add a new item to the end of an array?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q7" value="push()"> push()</li>
+                <li class="option"><input type="radio" name="q7" value="add()"> add()</li>
+                <li class="option"><input type="radio" name="q7" value="append()"> append()</li>
+                <li class="option"><input type="radio" name="q7" value="addToEnd()"> addToEnd()</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 8: What is the correct way to write a comment in JavaScript?</h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q8" value="<!-- This is a comment -->"> &lt;!-- This is a comment --&gt;</li>
+                <li class="option"><input type="radio" name="q8" value="// This is a comment"> // This is a comment</li>
+                <li class="option"><input type="radio" name="q8" value="/* This is a comment */"> /* This is a comment */</li>
+                <li class="option"><input type="radio" name="q8" value="' This is a comment"> ' This is a comment</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 9: What does the following expression evaluate to?
+            <h3>
+                true && (false || true)
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q9" value="true"> true</li>
+                <li class="option"><input type="radio" name="q9" value="false"> false</li>
+                <li class="option"><input type="radio" name="q9" value="Error"> Error</li>
+                <li class="option"><input type="radio" name="q9" value="null"> null</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h2>Question 10: What is the output of the following JavaScript code?
+            <h3>
+                console.log(typeof NaN);
+            </h3>
+            </h2>
+            <ul class="options">
+                <li class="option"><input type="radio" name="q10" value="number"> number</li>
+                <li class="option"><input type="radio" name="q10" value="NaN"> NaN</li>
+                <li class="option"><input type="radio" name="q10" value="null"> null</li>
+                <li class="option"><input type="radio" name="q10" value="undefined"> undefined</li>
+            </ul>
+        </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
